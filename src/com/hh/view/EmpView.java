@@ -8,8 +8,13 @@ public class EmpView {
 
 	public void view(ArrayList<EmpDTO> ar) {
 		
+		for(EmpDTO empDTO :ar) {
+			this.view(empDTO);
+		}
+		
+		
+		/**	
 		for(int i = 0; i< ar.size(); i++) {
-			
 			System.out.println("================================");
 			System.out.println(ar.get(i).getEmpno());
 			System.out.println(ar.get(i).getEname());
@@ -21,11 +26,12 @@ public class EmpView {
 			System.out.println(ar.get(i).getDeptno());
 			
 		}
+		*/
 	}
 	
 	
 	public void view(EmpDTO empdto) {
-		
+		System.out.println("================================");
 		System.out.println("EMPNO    : " +empdto.getEmpno());
 		System.out.println("ENAME    : " +empdto.getEname());
 		System.out.println("JOB      : " +empdto.getJob());
