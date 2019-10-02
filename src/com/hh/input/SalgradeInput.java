@@ -33,4 +33,15 @@ private Scanner sc;
 		
 		return grade;
 	}
+	
+	
+	public int delete() {
+		
+		sc = new Scanner(System.in);
+		System.out.println("삭제할 등급 입력");
+		int grade = sc.nextInt();
+		
+		return grade;
+	}
+	
 }

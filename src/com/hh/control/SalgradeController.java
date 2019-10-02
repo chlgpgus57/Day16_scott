@@ -68,7 +68,8 @@ public class SalgradeController {
 					break;
 				case 4:
 					
-					num = si.
+					num = si.delete();
+					select = salDAO.delete(num);
 					
 					if(select >0) {
 						System.out.println("삭제성공");

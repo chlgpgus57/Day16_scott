@@ -2,6 +2,7 @@ package com.hh.scott;
 
 
 import com.hh.bonus.BonusDTO;
+import com.hh.control.BonusController;
 import com.hh.control.FrontController;
 import com.hh.control.SalgradeController;
 import com.hh.input.BonusInput;
@@ -14,9 +15,11 @@ public class ScottMain {
 //		fc.start();
 //		
 		
-		SalgradeController sc = new SalgradeController();
-		sc.start();
+//		SalgradeController sc = new SalgradeController();
+//		sc.start();
 		
+		BonusController bc = new BonusController();
+		bc.start();
 //		
 //		BonusDTO bonusDto = null;
 //		BonusInput bi = new BonusInput();
