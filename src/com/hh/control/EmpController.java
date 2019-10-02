@@ -17,7 +17,7 @@ public class EmpController {
 	
 	public void start() {
 		
-		ArrayList<EmpDTO> ar = null;
+		
 		
 		EmpInput ei = new EmpInput();
 		EmpDAO ed = new EmpDAO();
@@ -30,27 +30,46 @@ public class EmpController {
 			System.out.println("메뉴를 골라주세요");
 			System.out.println("1. 사원전체정보출력");
 			System.out.println("2. 사원검색출력");
-			System.out.println("3. 종료");
+			System.out.println("3. 사원 정보 입력");
+			System.out.println("4. 종료");
 			int select = sc.nextInt();
 
 			switch(select) {
 				case 1: 
-					ar = ed.getSelectList();
-					ev.view(ar);
+					ArrayList<EmpDTO> ar = ed.getSelectList();
+					if(ar.size()>0) {
+						ev.view(ar);
+					}else {
+						ev.view("데이터가 없습니다.");
+					}
 					break;
 				case 2:
 					int num = ei.empnoInput();
 					empdto = ed.getSelectOne(num);
-					ev.view(empdto);
+					
+					if(empdto != null) {
+						ev.view(empdto);
+					}else {
+						ev.view("없는 사원 번호 입니다.");
+					}
+					
 					break;
 				case 3:
+					EmpDTO empdto2 = ei.insert();
+					 select = ed.empinsert(empdto2);
+					if(select >0) {
+						System.out.println("입력성공");
+					}else {
+						System.out.println("입력실패");
+					}
+					
+					
+					break;
+				default:
 					System.out.println("종료");
 					check = false;
 					break;
-				default:
-					break;
-					
-			
+				
 			}
 		}
 		

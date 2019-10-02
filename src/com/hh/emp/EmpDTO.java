@@ -1,6 +1,5 @@
 package com.hh.emp;
 
-import java.sql.Date;
 
 public class EmpDTO {
 
@@ -8,7 +7,7 @@ public class EmpDTO {
 	private String ename;
 	private String job;
 	private int mgr;
-	private Date hiredate;
+	private String hiredate;
 	private int sal;
 	private int comm;
 	private int deptno;
@@ -37,11 +36,11 @@ public class EmpDTO {
 	public void setMgr(int mgr) {
 		this.mgr = mgr;
 	}
-	public Date getHiredate() {
+	public String getHiredate() {
 		return hiredate;
 	}
-	public void setHiredate(Date date) {
-		this.hiredate = date;
+	public void setHiredate(String hiredate) {
+		this.hiredate = hiredate;
 	}
 	public int getSal() {
 		return sal;

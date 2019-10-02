@@ -41,4 +41,10 @@ public class EmpView {
 		System.out.println("COMM     : "+empdto.getComm());
 		System.out.println("DEPTNO   : "+empdto.getDeptno());
 	}
+	
+	
+	
+	public void view(String str) {
+		System.out.println(str);
+	}
 }
