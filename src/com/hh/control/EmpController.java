@@ -31,7 +31,8 @@ public class EmpController {
 			System.out.println("1. 사원전체정보출력");
 			System.out.println("2. 사원검색출력");
 			System.out.println("3. 사원 정보 입력");
-			System.out.println("4. 종료");
+			System.out.println("4. 사원 정보 삭제");
+			System.out.println("5. 종료");
 			int select = sc.nextInt();
 
 			switch(select) {
@@ -62,7 +63,16 @@ public class EmpController {
 					}else {
 						System.out.println("입력실패");
 					}
+					break;
+				case 4:
+					num = ei.delete();
+					select = ed.delete(num);
 					
+					if(select >0) {
+						System.out.println("삭제성공");
+					}else {
+						System.out.println("삭제실패");
+					}
 					
 					break;
 				default:

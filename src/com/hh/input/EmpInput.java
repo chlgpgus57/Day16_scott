@@ -47,4 +47,13 @@ public class EmpInput {
 			
 		}
 		
+		public int delete() {
+			
+			sc = new Scanner(System.in);
+			System.out.println("삭제할 직원의 직원번호 입력");
+			int empno = sc.nextInt();
+			
+			return empno;
+		}
+		
 }

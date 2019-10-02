@@ -1,7 +1,6 @@
 package com.hh.emp;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -10,6 +9,37 @@ import java.util.ArrayList;
 import com.hh.util.DBConnecter;
 
 public class EmpDAO {
+	//사원삭제
+	public int delete(int empno) {
+		DBConnecter dbc = new DBConnecter();
+		Connection con = null;
+		PreparedStatement st = null;
+		int result = 0;
+		
+		try {
+			con = dbc.dbconnecter();
+			String sql = "delete emp where empno=?";
+			st = con.prepareStatement(sql);
+			
+			st.setInt(1, empno);
+			
+			result = st.executeUpdate();
+			
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}finally {
+			try {
+				st.close();
+				con.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return result;
+	}
 	
 	public int empinsert(EmpDTO empdto) {
 		DBConnecter dbc = new DBConnecter();
