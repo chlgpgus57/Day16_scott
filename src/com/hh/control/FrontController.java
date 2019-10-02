@@ -7,13 +7,19 @@ public class FrontController {
 	private Scanner sc;
 	private EmpController empController;
 	private DeptController deptController;
+	private SalgradeController salgradeController;
+	private BonusController bonusController;
 	
 	public FrontController() {
 		sc = new Scanner(System.in);
 		empController = new EmpController();
 		deptController = new DeptController();
+		salgradeController = new SalgradeController();
+		bonusController = new BonusController();
 	}
 	
+	
+
 
 	public void start() {
 		boolean check = true;
@@ -22,7 +28,9 @@ public class FrontController {
 		while(check) {
 			System.out.println("1. 사원관리");
 			System.out.println("2. 부서관리");
-			System.out.println("3. 종     료");
+			System.out.println("3. 급여관리");
+			System.out.println("4. 보 너 스");
+			System.out.println("5. 종     료");
 			
 			select = sc.nextInt();
 			
@@ -33,6 +41,12 @@ public class FrontController {
 				break;
 			case 2:
 				deptController.start();
+				break;
+			case 3:
+				salgradeController.start();
+				break;
+			case 4:
+				bonusController.start();
 				break;
 			default:
 				check = false;
